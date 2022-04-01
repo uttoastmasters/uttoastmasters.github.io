@@ -70,5 +70,6 @@ console.warn(`today: ${today}`)
 	    // add presiding officer
 			// let members = toastiesSheet.members;
 			// show_growth(members);
+			if (/\bprint=1\b/.test(window.location.search)) window.print();
 	  });
 	});
