@@ -11,6 +11,7 @@ const month = date.toLocaleString('default', { month: 'short' });
 console.log(month);
 */
 var meetingColToday;
+var rolesWanted = [];
 console.warn('load_meeting_info.js loaded!')
 // https://html-online.com/articles/get-url-parameters-javascript/
 function getUrlVars() {
@@ -69,17 +70,17 @@ var ROLES = {
 ".whoIsGrammarian": "Grammarian     (2 mins)",
 ".whoIsTimeKeeper": "Time Keeper",
 ".whoIsVoteCounter": "Vote Counter",
-".whoIsSpeaker1": "Speaker # 1",
-".whoIsSpeaker2": "Speaker # 2",
-".whoIsSpeaker3": "Speaker # 3",
 "#whoIsGeneralEvaluator": "General Evaluator",
 // "#whoIsTableTopicsEvaluator": "TableTopics Evaluator (2-3 mins)",
 "#whoIsTableTopicsEvaluator": "TableTopics Evaluator (3-4 mins)",
+".whoIsSpeaker1": "Speaker # 1",
 ".whoIsEvaluator1": "Evaluator # 1 (2-3 mins)",
 ".whoIsEvaluator2": "Evaluator # 2 (2-3 mins)",
+".whoIsSpeaker2": "Speaker # 2",
+".whoIsSpeaker3": "Speaker # 3",
 ".whoIsEvaluator3": "Evaluator # 3 (2-3 mins)",
 "#whoIsTopicsMaster": "Topics Master",
-"#whoIsTechMaster": "Tech-Master",
+// "#whoIsTechMaster": "Tech-Master",
 };
 var SCORES = {
 "Participants": 1, // don't include those who has roles
@@ -563,10 +564,20 @@ class SignupSheet extends SheetV4{
       $(element).html(defaultResult);
 
       if(who =='') {
+        if (role.includes('Evaluator #') && (rolesWanted.includes('Speaker # '+role[role.indexOf('#')+2])) ) {
+          // speaker exists but evalutor doesn't
+         // first check spearker, then check evaluator
+         console.warn('Evaluator is not needed since no speech to evaluate: ' + role)
+        } else {
+          console.warn('roleWanted: ' + role)
+          rolesWanted.push(role);
+        }
+
         if (role.includes('Speaker')) {
           console.warn('hide: ' + role)
           $('.speech'+role[role.length-1]).hide();
         }
+
         return;
       }
       // $(element).html(who);
@@ -613,6 +624,7 @@ class SignupSheet extends SheetV4{
     }
     this.assignedMembers = [];
     Object.entries(ROLES).forEach(e => this.fillInRole(e[1], e[0]))
+    $('#rolesWanted').html(rolesWanted.join());
     console.log('Assigned: ' + this.assignedMembers);
     // add those who already assigned
 
