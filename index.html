@@ -26,6 +26,14 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+  <style>
+  .role {
+    float:right;
+    padding-right: 10%;
+    font-style: italic;
+    text-decoration: underline;
+  }
+  </style>
 
 
 
@@ -59,7 +67,7 @@
           <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->
 
-        <h2>a club where longhorns 🤘gather to gain experiences in <span>public speaking</span> and <span>leadership</span> in a fun and encouraging environment. </h2>
+        <h2>a club where longhorns🤘gather to gain experiences in <span>public speaking</span> and <span>leadership</span> in a fun and encouraging environment. </h2>
 
         <div class="social-links">
           <a href="https://www.facebook.com/groups/UTSTM" class="facebook"><i class="bi bi-facebook"></i></a>
@@ -398,10 +406,12 @@
     <div class="container">
 
       <div class="section-title">
-        <h2>Agenda</h2>
-        <p>Meeting Theme</p>
+        <h2>Meeting Theme</h2>
+        <p id="whatTheme">To Be Announced</p>
         <nobr id="whichRoom">TBA</nobr>, <nobr id='whatIsDate'>TBA</nobr>
       </div>
+
+      Sign up roles <a href="https://docs.google.com/spreadsheets/d/17Vtxbeh7Q6-ic89sWC8_U8RUoUAr6dlvi3jxADRMNQU/">here</a>.
 
       <div class="row">
         <div class="col-lg-6">
@@ -410,7 +420,7 @@
 
             <h4>Call to Order</h4>
             <h4>Announcement of Guests</h4>
-            <p>Presiding Officer: <em><nobr class='whoIsPresidingOfficer'>TBA</nobr></em></p>
+            <p>Presiding Officer:<nobr class='role whoIsPresidingOfficer'>TBA</nobr></p>
               <!-- <em>Innovative and deadline-driven Graphic Designer with 3+ years of experience designing and developing user-centered digital/print marketing material from initial concept to final, polished deliverable.</em></p> -->
             <!-- <p>
             <ul>
@@ -422,45 +432,41 @@
           </div>
           <div class="resume-item pb-0">
             <h4>Introduce the theme</h4>
-            <p>Toastmaster of the Evening: <em><nobr class='whoIsToastmaster'>TBA</nobr></em></p>
+            <p>Toastmaster of the Evening: <nobr class='role whoIsToastmaster'>TBA</nobr></p>
           </div>
           <div class="resume-item pb-0">
             <h4>Call on Supporting Roles</h4>
-            <table style="width:100%">
-							<tr>
-								<!-- <th class="roletitle">Supporting roles</th> -->
-								<!-- <th>Person 2</th> -->
-							</tr>
-							<tr> <td class="roletitle">Grammarian:  </td> <td class="roletaker"><em class='whoIsGrammarian'>TBA</em></td> </tr>
-							<tr> <td class="roletitle">Ah Counter:  </td> <td class="roletaker"><em class='whoIsAhCounter'>TBA</em></td> </tr>
-							<tr> <td class="roletitle">Time Keeper: </td> <td class="roletaker"><em class='whoIsTimeKeeper'>TBA</em></td> </tr>
-							<tr> <td class="roletitle">Vote Counter:</td> <td class="roletaker"><em class='whoIsVoteCounter'>TBA</em></td> </tr>
-						</table>
+						<p>Grammarian:  <span class="role whoIsGrammarian">TBA</span></p>
+						<p>Ah Counter:  <span class="role whoIsAhCounter">TBA</span></p>
+						<p>Time Keeper: <span class="role whoIsTimeKeeper">TBA</span></p>
+						<p>Vote Counter:<span class="role whoIsVoteCounter">TBA</span></p>
           </div>
 
           <h3 class="resume-title">Prepared Speeches</h3>
-          <div class="resume-item">
+          <div class="resume-item speech1">
             <h4>1. <span id='whatSpeech1'>Speech Title Undetermined</span></h4>
-            <h5><nobr class='whoIsSpeaker1'>TBA</nobr></h5> Evaluated by <em class='whoIsEvaluator1'>TBA</em>
-            <!-- <p><em>Rochester Institute of Technology, Rochester, NY</em></p>
-            <p>Qui deserunt veniam. Et sed aliquam labore tempore sed quisquam iusto autem sit. Ea vero voluptatum qui ut dignissimos deleniti nerada porti sand markend</p> -->
+            <p>Speaker:  <span class="role whoIsSpeaker1">TBA</span></p>
+						<p>Evalutor:  <span class="role whoIsEvaluator1">TBA</span></p>
           </div>
-          <div class="resume-item">
+          <div class="resume-item speech2">
             <h4>2. <span id='whatSpeech2'>Speech Title Undetermined</span></h4>
-            <h5><nobr class='whoIsSpeaker2'>TBA</nobr></h5> Evaluated by <em class='whoIsEvaluator2'>TBA</em>
+            <p>Speaker:  <span class="role whoIsSpeaker2">TBA</span></p>
+						<p>Evalutor:  <span class="role whoIsEvaluator2">TBA</span></p>
           </div>
-
+          <div class="resume-item speech3">
+            <h4>3. <span id='whatSpeech3'>Speech Title Undetermined</span></h4>
+            <p>Speaker:  <span class="role whoIsSpeaker3">TBA</span></p>
+						<p>Evalutor:  <span class="role whoIsEvaluator3">TBA</span></p>
+          </div>
           <div class="resume-item">
             <h4>Collect votes</h4>
-            <p>return control to Toastmaster</p>
           </div>
         </div>
         <div class="col-lg-6">
           <h3 class="resume-title">TableTopics</h3>
           <div class="resume-item">
             <h4>Impromptu speeches (1-2 min each)</h4>
-            <p>TopicsMaster: <em><nobr id='whoIsTopicsMaster'>TBA</nobr></em>
-            </p>
+            <p>TopicsMaster: <span class="role" id='whoIsTopicsMaster'>TBA</span></p>
             <!-- <h4>Senior graphic design specialist</h4>
             <h5>2019 - Present</h5>
             <p><em>Experion, New York, NY </em></p>
@@ -480,40 +486,34 @@
           <h3 class="resume-title">Evaluation</h3>
           <div class="resume-item">
             <h4>Evaluation Speeches</h4>
-            <p>General Evaluator: <em><nobr id='whoIsGeneralEvaluator'>TBA</nobr></em>
-            </p>
-            <ul>
-              <li><em class='whoIsEvaluator1'>Evaluator 1</em> evaluating <em class='whoIsSpeaker1'>Speaker 1</em>'s Speech</li>
-              <li><em class='whoIsEvaluator2'>Evaluator 2</em> evaluating <em class='whoIsSpeaker2'>Speaker 2</em>'s Speech</li>
-              <li><em class='whoIsEvaluator3'>Evaluator 3</em> evaluating <em class='whoIsSpeaker3'>Speaker 3</em>'s Speech</li>
-              <li><em id='whoIsTableTopicsEvaluator'>TableTopics Evaluator</em> evaluating TableTopics</li>
-            </ul>
+            <p>General Evaluator: <span class="role" id='whoIsGeneralEvaluator'>TBA</span></p>
+            <p class="speech1"><em class='whoIsSpeaker1'>Speaker 1</em>'s Evaluator: <span class="role whoIsEvaluator1">TBA</span></p>
+            <p class="speech2"><em class='whoIsSpeaker2'>Speaker 2</em>'s Evaluator: <span class="role whoIsEvaluator2">TBA</span></p>
+            <p class="speech3"><em class='whoIsSpeaker3'>Speaker 3</em>'s Evaluator: <span class="role whoIsEvaluator3">TBA</span></p>
+            <p>TableTopics Evaluator: <span class="role" id='whoIsTableTopicsEvaluator'>TBA</span></p>
           </div>
           <div class="resume-item">
             <h4>Call on Supporting Roles</h4>
-
-            <table style="width:100%">
-							<tr> <td class="roletitle">Grammarian:  </td> <td class="roletaker"><em class='whoIsGrammarian'>TBA</em></td> </tr>
-							<tr> <td class="roletitle">Ah Counter:  </td> <td class="roletaker"><em class='whoIsAhCounter'>TBA</em></td> </tr>
-							<tr> <td class="roletitle">Time Keeper: </td> <td class="roletaker"><em class='whoIsTimeKeeper'>TBA</em></td> </tr>
-						</table>
+							<p>Grammarian: <span class='role whoIsGrammarian'>TBA</span></p>
+							<p>Ah Counter: <span class='role whoIsAhCounter'>TBA</span></p>
+							<p>Time Keeper:<span class='role whoIsTimeKeeper'>TBA</span></p>
           </div>
           <div class="resume-item">
             <h4>Evaluation of the Meeting</h4>
           </div>
           <div class="resume-item">
             <h4>Announce Awards</h4>
-            <p>Vote Counter: <em><nobr class='whoIsVoteCounter'>TBA</nobr></em>
+            <p>Vote Counter: <span class='whoIsVoteCounter'>TBA</span></p>
           </div>
-        </div>
-        <h3 class="resume-title">Closing</h3>
-        <div class="resume-item">
-          <h4>Summary</h4>
-          <p>Toastmaster of the Evening: <em><nobr class='whoIsToastmaster'>TBA</nobr></em></p>
-        </div>
-        <div class="resume-item">
-          <h4>Announcements and Adjournment</h4>
-          <p>Presiding Officer: <em><nobr class='whoIsPresidingOfficer'>TBA</nobr></em>
+          <h3 class="resume-title">Closing</h3>
+          <div class="resume-item">
+            <h4>Summary</h4>
+            <p>Toastmaster of the Evening: <nobr class='role whoIsToastmaster'>TBA</nobr></p>
+          </div>
+          <div class="resume-item">
+            <h4>Announcements and Adjournment</h4>
+            <p>Presiding Officer: <nobr class='role whoIsPresidingOfficer'>TBA</nobr></p>
+          </div>
         </div>
       </div>
 

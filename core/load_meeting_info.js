@@ -559,7 +559,16 @@ class SignupSheet extends SheetV4{
   fillInRole(role, element) {
       let who = this.whois(role);
       console.log(element + ':' + who);
-      if(who=='TBA') {return;}
+      var defaultResult = '<nobr style="color: white; background-color: orange">&nbsp;TBA&nbsp;<nobr>';
+      $(element).html(defaultResult);
+
+      if(who =='') {
+        if (role.includes('Speaker')) {
+          console.warn('hide: ' + role)
+          $('.speech'+role[role.length-1]).hide();
+        }
+        return;
+      }
       // $(element).html(who);
       let result = '';
       for ( let item of who.split(",") ){
@@ -580,7 +589,7 @@ class SignupSheet extends SheetV4{
       // class="btn btn-main-sm" style='padding:2px'>Signup role</a>`:result);
       // var default = `<form action="https://docs.google.com/spreadsheets/d/17Vtxbeh7Q6-ic89sWC8_U8RUoUAr6dlvi3jxADRMNQU/"
       // ><input type="submit" value="Signup role" /></form>`
-      var defaultResult = '<nobr style="color: white; background-color: orange">&nbsp;TBA&nbsp;<nobr>';
+
       $(element).html( (result=='')?defaultResult:result);
 
   }
@@ -608,39 +617,8 @@ class SignupSheet extends SheetV4{
     // add those who already assigned
 
     // disable speech role suggestion, don't show it if there are no speaker
-    // if ($('.whoIsSpeaker1').text() == '') {
-    //   $('#speech1').hide();
-    //   $('#eval1').hide();
-    //   $('#whoIsSpeaker1').html('&nbsp;')
-    //   $('#whatSpeech1').html('&nbsp;')
-    //   $('#whoIsEvaluator1').html('&nbsp;')
-    //   $('#eval1').html('&nbsp;')
-    // } else {
-    //   $('#speech1').show();
-    //   $('#eval1').show();
-    // }
-    // if ($('.whoIsSpeaker2').text() == '') {
-    //   $('#speech2').hide();
-    //   $('#eval2').hide();
-    //   $('#whoIsSpeaker2').html('&nbsp;')
-    //   $('#whatSpeech2').html('&nbsp;')
-    //   $('#whoIsEvaluator2').html('&nbsp;')
-    //   $('#eval2').html('&nbsp;')
-    // } else {
-    //   $('#speech2').show();
-    //   $('#eval2').show();
-    // }
-    // if ($('.whoIsSpeaker3').text() == '') {
-    //   $('#speech3').hide();
-    //   $('#eval3').hide();
-    //   $('#whoIsSpeaker3').html('&nbsp;')
-    //   $('#whatSpeech3').html('&nbsp;')
-    //   $('#whoIsEvaluator3').html('&nbsp;')
-    //   $('#eval3').html('&nbsp;')
-    // } else {
-    //   $('#speech3').show();
-    //   $('#eval3').show();
-    // }
+
+
     //////// disable fillInSuggestion for now (add a switch to control showing it)
     // for(var element in roles) {
     //   var role = roles[element];
