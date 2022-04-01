@@ -16,7 +16,7 @@ body {
   align-items: center;
   background: url("../img/bg.jpg") no-repeat;
   -webkit-background-size: cover;
-  display: flex;
+  /* display: flex; */
 }
 body::before {
   content: "";
